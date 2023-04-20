@@ -21,7 +21,7 @@ class Queue {
 
   enqueue(val) {
     // queue is empty
-    if(this.first === null) {
+    if(this.first === null && this.size === 0) {
       this.first = this.last = new Node(val);
       this.size++;
       return;
@@ -37,13 +37,22 @@ class Queue {
    * and return its value. Should throw an error if the queue is empty. */
 
   dequeue() {
-
+    // queue is empty
+    if(this.first === null && this.size === 0) throw new Error('Queue is empty!');
+    let temp = this.first;
+    this.first = this.first.next;
+    this.size--;
+    // make sure next pointer is cleared
+    temp.next = null;
+    return temp.val;
   }
 
   /** peek(): return the value of the first node in the queue. */
 
   peek() {
-
+    // queue is empty
+    if(this.first === null && this.size === 0) throw new Error('Queue is empty!');
+    return this.first.val;
   }
 
   /** isEmpty(): return true if the queue is empty, otherwise false */
