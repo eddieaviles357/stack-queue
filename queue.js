@@ -58,7 +58,7 @@ class Queue {
   /** isEmpty(): return true if the queue is empty, otherwise false */
 
   isEmpty() {
-
+    return (this.first === null && this.size === 0) ? true : false; 
   }
 }
 
