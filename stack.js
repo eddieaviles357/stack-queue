@@ -57,7 +57,7 @@ class Stack {
   /** isEmpty(): return true if the stack is empty, otherwise false */
 
   isEmpty() {
-    returtn (this.first === null || this.last === null || this.length === 0) ? true : false;
+    return (this.first === null || this.last === null || this.length === 0) ? true : false;
   }
 };
 
