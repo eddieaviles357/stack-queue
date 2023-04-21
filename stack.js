@@ -20,10 +20,12 @@ class Stack {
   /** push(val): add new value to end of the stack. Returns undefined. */
 
   push(val) {
+    // stack is empty first and last are the same value
     if(this.first == null && this.size === 0) {
       this.first = this.last = new Node(val);
       this.size++;
     };
+    // add to top of stack
     this.first.next = new Node(val);
     this.first = this.first.next;
     this.size++;
