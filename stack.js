@@ -20,8 +20,14 @@ class Stack {
   /** push(val): add new value to end of the stack. Returns undefined. */
 
   push(val) {
-
-  }
+    if(this.first == null && this.size === 0) {
+      this.first = this.tail = new Node(val);
+      this.size++;
+    };
+    this.last.next = new Node(val);
+    this.last = this.last.next;
+    return;
+  };
 
   /** pop(): remove the node from the top of the stack
    * and return its value. Should throw an error if the stack is empty. */
