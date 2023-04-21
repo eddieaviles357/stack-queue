@@ -21,11 +21,12 @@ class Stack {
 
   push(val) {
     if(this.first == null && this.size === 0) {
-      this.first = this.tail = new Node(val);
+      this.first = this.last = new Node(val);
       this.size++;
     };
-    this.last.next = new Node(val);
-    this.last = this.last.next;
+    this.first.next = new Node(val);
+    this.first = this.first.next;
+    this.size++;
     return;
   };
 
