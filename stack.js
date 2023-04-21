@@ -29,7 +29,6 @@ class Stack {
     // add to top of stack
     let topNode = new Node(val);
     topNode.next = this.first;
-    console.log(topNode)
     this.first = topNode;
     this.size++;
     return;
@@ -38,15 +37,15 @@ class Stack {
   /** pop(): remove the node from the top of the stack
    * and return its value. Should throw an error if the stack is empty. */
 
-  // pop() {
-  //   let popped = null;
-  //   if(this.first === null || this.size === 0 || this.last === null) throw new Error('Stack is empty!');
-  //   popped = this.first; // to be removed from top of stack
-  //   this.first = this.first.next; // assign new top of stack
-  //   // popped.next = null; // remove reference to next
-  //   this.size--; // decrement size
-  //   return popped; // return value of popped node
-  // }
+  pop() {
+    let popped = null;
+    if(this.first === null || this.size === 0 || this.last === null) throw new Error('Stack is empty!');
+    popped = this.first; // to be removed from top of stack
+    this.first = this.first.next; // assign new top of stack
+    popped.next = null; // remove reference to next
+    this.size--; // decrement size
+    return popped.val; // return value of popped node
+  }
 
   /** peek(): return the value of the first node in the stack. */
 
